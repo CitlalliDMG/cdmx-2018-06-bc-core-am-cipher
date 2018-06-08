@@ -27,8 +27,9 @@ const encode = () =>{
 
 			//Esta sentencia el nuevo código ASCII basado en el código de el caracter original y la clave a usar	
 			let b = (a-65+key)%26+65;	
+			//Rango mayúsculas
 			//Crea el nuevo texto usando el operador de asignación de adición, convirtiendo el código ASCII a la nueva letra y convirtiendola en mayúscula
-			codedPhrase += String.fromCharCode(b)/*.toUpperCase()*/; 
+			codedPhrase += String.fromCharCode(b); 
 			//Guarda/despliega el nuevo texto codificado	 
 			//console.log(codedPhrase);
 
@@ -37,8 +38,9 @@ const encode = () =>{
 
 			//Esta sentencia el nuevo código ASCII basado en el código de el caracter original y la clave a usar
 			let b = (a-97+key)%26+97;
+			//Rango minúsculas
 			//Crea el nuevo texto usando el operador de asignación de adición, convirtiendo el código ASCII a la nueva letra y convirtiendola en mayúscula
-			codedPhrase += String.fromCharCode(b)/*.toLowerCase()*/; 
+			codedPhrase += String.fromCharCode(b); 
 			//Guarda/despliega el nuevo texto codificado
 			//console.log(codedPhrase);
 
@@ -57,7 +59,7 @@ const encode = () =>{
 	}//Cierra FOR
 
 	//Aquí va a ir el return
-	return result.innerHTML = codedPhrase;
+	return result.innerHTML = "Esta es tu texto codificado: <br>" + codedPhrase;
 
 }//Cierra FUNCIÓN encodet
 
@@ -110,7 +112,7 @@ const decode = () =>{
 	}//Cierra FOR
 
 	//Aquí va a ir el return
-	return result.innerHTML = decodedPhrase;
+	return result.innerHTML = "Esta es tu texto codificado: <br>" + decodedPhrase;
 
 }//Cierra FUNCIÓN encodet
 
