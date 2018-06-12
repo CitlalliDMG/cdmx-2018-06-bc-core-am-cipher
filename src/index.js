@@ -4,11 +4,19 @@ let codedPhrase = "";
 //String vacio donde se guardara el texto decodificado
 let decodedPhrase = "";	
 
-//Sirve para desplegar el resultado
-let result = document.getElementById("result");
-
 //Sirve para después mandar llamar el texto que ingresa el usuario
-let string = document.getElementById("originalPhrase");
+let getString = document.getElementById("originalPhrase");
 
 //Sirve para después mandar llamar la clave que ingresa el usuario
-let offset = document.getElementById("key");
+let getOffset = document.getElementById("key");
+
+//Sirve para después poder ocultar los botones
+let buttons = document.getElementById("buttons");
+
+
+//Sirven para desplegar el resultado
+let answer = document.getElementById("answer");
+let result = document.getElementById("result");
+let messageResult = document.getElementById("messageResult");
+
+

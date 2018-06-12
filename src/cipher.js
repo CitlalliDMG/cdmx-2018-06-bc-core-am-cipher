@@ -3,18 +3,78 @@ window.cipher = {
   //Ejemplo de sintaxis
   //encode: function(offset,string)
 
+	getDataEncode : () =>{
+		let string = getString.value;
+		console.log(string);
+		let offset = parseInt(getOffset.value);
+		console.log(offset);
+
+		if (string == "") {
+
+	        alert("No se registro tu texto, intenta de nuevo");
+
+	    } else {
+	 
+		   if (offset == "" || offset == " " || offset%1 != 0) {
+
+			alert("Error: No se registro tu clave o no es un número entero");
+
+		   }else{
+
+		   stringContainer.style.display = "none";
+		   offsetContainer.style.display = "none";
+		   buttons.style.display = "none";
+	       answer.style.display = "block";
+		   messageResult.innerHTML = `Este es tu texto codificado:`;
+		   }
+
+	    };
+
+
+		cipher.encode(offset,string);
+	},
+
+	getDataDecode : () =>{
+		let string = getString.value;
+		console.log(string);
+		let offset = parseInt(getOffset.value);
+		console.log(offset);
+
+		if (string == "") {
+
+	        alert("No se registro tu texto, intenta de nuevo");
+
+	    } else {
+	 
+		   if (offset == "" || offset == " " || offset%1 != 0) {
+
+			alert("Error: No se registro tu clave o no es un número entero");
+
+		   }else{
+
+		   stringContainer.style.display = "none";
+		   offsetContainer.style.display = "none";
+		   buttons.style.display = "none";
+	       answer.style.display = "block";
+		   messageResult.innerHTML = `Este es tu texto codificado:`;
+		   }
+
+	    };
+
+		cipher.decode(offset,string);
+	},
+
 	//Inicia función para codificar
-	encode : () =>{
-		//Obtiene la CADENA a cifrar y la guarda en una variable
-		const strCode = string.value;
-		//Obtiene el OFFSET (clave), me aseguro de convertirla en número y la guardo en una variable
-		const key = parseInt(offset.value);
+	encode : (offset,string) =>{
+
+		//Me aseguro de convertir el dato obtenido en OFFSET en número y la guardo en una variable
+		const key = parseInt(offset);
 
 		//Bucle que se ejecuta un número de veces igual a la longitud del texto introducido por el usuario
-		for(let i=0; i< strCode.length; i++){	
+		for(let i=0; i< string.length; i++){	
 
 			//Obtiene el código ASCII de cada caracter del texto
-			let asciiOriginal = strCode.charCodeAt(i);	
+			let asciiOriginal = string.charCodeAt(i);	
 
 			//Condicional que detecta si el caracter procesado estaba en MAYÚSCULAS	
 			if(asciiOriginal >= 65 && asciiOriginal <= 90){		
@@ -43,23 +103,22 @@ window.cipher = {
 		}//Cierra FOR
 
 		//Aquí va a el return
-		return result.innerHTML = "Esta es tu texto codificado: <br>" + codedPhrase;
+		return result.innerHTML = codedPhrase;
 
 	},//Cierra FUNCIÓN encode
 
 	//Inicia función para decodificar
-	decode : () =>{
+	decode : (offset,string) =>{
 
-		//Obtiene la CADENA a decifrar y la guarda en una variable
-		const strCode = string.value;
-		//Obtiene el OFFSET (clave), me aseguro de convertirla en número y la guardo en una variable
-		const key = parseInt(offset.value);
+
+		//Me aseguro de convertir el dato obtenido en OFFSET en número y la guardo en una variable
+		const key = parseInt(offset);
 
 		//Bucle que se ejecuta un número de veces igual a la longitud del texto introducido por el usuario
-		for(let i=0; i< strCode.length; i++){	
+		for(let i=0; i< string.length; i++){	
 
 			//Obtiene el código ASCII de cada caracter del texto
-			let asciiOriginal = strCode.charCodeAt(i);	
+			let asciiOriginal = string.charCodeAt(i);	
 			//Condicional que detecta si el caracter procesado estaba en MAYÚSCULAS	
 			if((asciiOriginal >=65 && asciiOriginal <= 90) || (asciiOriginal >= 91 && asciiOriginal <= 96)){		
 
@@ -90,7 +149,7 @@ window.cipher = {
 		}//Cierra FOR
 
 		//Aquí va el return
-		return result.innerHTML = "Esta es tu texto codificado: <br>" + decodedPhrase;
+		return result.innerHTML = decodedPhrase;
 
 	}//Cierra FUNCIÓN decode
 

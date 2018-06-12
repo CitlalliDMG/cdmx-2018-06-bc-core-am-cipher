@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Caesar Cipher</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   </head>
   <body>
 
@@ -18,35 +19,39 @@
 
     <!--Termina header-->
 
-    <div id="textContainer">
+    <section id=content>
 
-      <h3>¿Cuál es tu texto?</h3>
-      <input type="text" id="originalPhrase" placeholder="Ingresa tu mensaje aquí" autofocus="">
+      <div id="stringContainer">
 
-    </div>
+        <h3>¿Cuál es tu texto?</h3>
+        <input type="text" id="originalPhrase" placeholder="Ingresa tu mensaje aquí" autofocus="">
 
-    <div id="keyContainer">
+      </div>
+
+      <div id="offsetContainer">
+        
+        <h3>¿Cuál es tu clave de cifrado?</h3>
+        <input type="text" id="key" placeholder="Ingresa tu clave">
+
+      </div>
+
+      <div id="buttons">
+
+        <h3>¿Que quieres hacer con el texto?</h3>
+        <button type="button" id="codeButton" class="question" onclick="cipher.getDataEncode()">Codificar</button>
+        <button type="button" id="decodeButton" class="question" onclick="cipher.getDataDecode()">Decodificar</button>
+
+      </div>
+
+      <div id="answer">
       
-      <h3>¿Cuál es tu clave de cifrado?</h3>
-      <input type="text" id="key" placeholder="Ingresa tu clave">
+        <h3 id="messageResult"></h3>
+        <p id="result"></p>
+        <button type="submit" id="restartButton" class="question" onclick="window.location.reload()">Regresa al inicio</button>
 
-    </div>
-
-    <div id="buttons">
-
-      <h3>¿Que quieres hacer con el texto?</h3>
-      <button type="button" id="codeButton" class="question" onclick="cipher.encode()">Codificar</button>
-      <button type="button" id="decodeButton" class="question" onclick="cipher.decode()">Decodificar</button>
-
-    </div>
-
-    <div id="answer">
-    
-      <h3 id="result"></h3>
-
-    </div>
+      </div>
   
-
+    </section>
 
     <div id="root"></div>
     <script src="cipher.js"></script>
