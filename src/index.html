@@ -12,7 +12,8 @@
 
     <header>
 
-      <h1>LABORATORIA <br> Cifrado César</h1>
+      <h1>Shhh... <br> Es una sorpresa ;D</h1>
+      <p>Codifica y decodifica tus mensajes aquí para que YA SABES QUIÉN no se entere de los planes para su cumpleaños.</p>
       <hr>
 
     </header>
@@ -23,23 +24,23 @@
 
       <div id="stringContainer">
 
-        <h3>¿Cuál es tu texto?</h3>
-        <input type="text" id="originalPhrase" placeholder="Ingresa tu mensaje aquí" autofocus="">
+        <h3>¿Cuál es tu mensaje?</h3>
+        <input type="text" id="originalPhrase" placeholder="Ingresa tu mensaje aquí" autofocus=""
 
       </div>
 
       <div id="offsetContainer">
         
-        <h3>¿Cuál es tu clave de cifrado?</h3>
+        <h3>¿Cuál es la clave secreta?</h3>
         <input type="text" id="key" placeholder="Ingresa tu clave">
 
       </div>
 
       <div id="buttons">
 
-        <h3>¿Que quieres hacer con el texto?</h3>
-        <button type="button" id="codeButton" class="question" onclick="cipher.getDataEncode()">Codificar</button>
-        <button type="button" id="decodeButton" class="question" onclick="cipher.getDataDecode()">Decodificar</button>
+        <h3>¿Que quieres hacer con el mensaje?</h3>
+        <button type="button" id="codeButton" class="question" onclick="getDataEncode()">Codificarlo</button>
+        <button type="button" id="decodeButton" class="question" onclick="getDataDecode()">Decodificarlo</button>
 
       </div>
 
@@ -47,6 +48,7 @@
       
         <h3 id="messageResult"></h3>
         <p id="result"></p>
+        <p id="offsetResult"></p>
         <button type="submit" id="restartButton" class="question" onclick="window.location.reload()">Regresa al inicio</button>
 
       </div>

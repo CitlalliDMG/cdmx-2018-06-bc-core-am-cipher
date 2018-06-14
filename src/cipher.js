@@ -3,67 +3,6 @@ window.cipher = {
   //Ejemplo de sintaxis
   //encode: function(offset,string)
 
-	getDataEncode : () =>{
-		let string = getString.value;
-		console.log(string);
-		let offset = parseInt(getOffset.value);
-		console.log(offset);
-
-		if (string == "") {
-
-	        alert("No se registro tu texto, intenta de nuevo");
-
-	    } else {
-	 
-		   if (offset == "" || offset == " " || offset%1 != 0) {
-
-			alert("Error: No se registro tu clave o no es un número entero");
-
-		   }else{
-
-		   stringContainer.style.display = "none";
-		   offsetContainer.style.display = "none";
-		   buttons.style.display = "none";
-	       answer.style.display = "block";
-		   messageResult.innerHTML = `Este es tu texto codificado:`;
-		   }
-
-	    };
-
-
-		cipher.encode(offset,string);
-	},
-
-	getDataDecode : () =>{
-		let string = getString.value;
-		console.log(string);
-		let offset = parseInt(getOffset.value);
-		console.log(offset);
-
-		if (string == "") {
-
-	        alert("No se registro tu texto, intenta de nuevo");
-
-	    } else {
-	 
-		   if (offset == "" || offset == " " || offset%1 != 0) {
-
-			alert("Error: No se registro tu clave o no es un número entero");
-
-		   }else{
-
-		   stringContainer.style.display = "none";
-		   offsetContainer.style.display = "none";
-		   buttons.style.display = "none";
-	       answer.style.display = "block";
-		   messageResult.innerHTML = `Este es tu texto codificado:`;
-		   }
-
-	    };
-
-		cipher.decode(offset,string);
-	},
-
 	//Inicia función para codificar
 	encode : (offset,string) =>{
 
@@ -93,7 +32,7 @@ window.cipher = {
 				codedPhrase += String.fromCharCode(newAscii);
 
 			//Condicional que detecta si el caracter procesado es un ESPACIO EN BLANCO (ASCII 32), o algún carácter especial			
-			}else if (asciiOriginal === 32  || (asciiOriginal>=33 || asciiOriginal<=64) || (asciiOriginal>=91 || asciiOriginal<=96) || (asciiOriginal>=123 || asciiOriginal<=126)) {
+			}else if (asciiOriginal === 32  || (asciiOriginal>=33 || asciiOriginal<=64) || (asciiOriginal>=91 || asciiOriginal<=96) || (asciiOriginal>=123 || asciiOriginal<=126 )) {
 
 				//Si detecta que se cumple la condición del ELSE IF no le hace nada al código, solo lo vuelve a transformar en letra
 				codedPhrase += String.fromCharCode(asciiOriginal);
