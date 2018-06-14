@@ -6,6 +6,8 @@ window.cipher = {
 	//Inicia función para codificar
 	encode : (offset,string) =>{
 
+		//String vacio donde se guardara el texto codificado
+		let codedPhrase = "";	
 		//Me aseguro de convertir el dato obtenido en OFFSET en número y la guardo en una variable
 		const key = parseInt(offset);
 
@@ -32,7 +34,7 @@ window.cipher = {
 				codedPhrase += String.fromCharCode(newAscii);
 
 			//Condicional que detecta si el caracter procesado es un ESPACIO EN BLANCO (ASCII 32), o algún carácter especial			
-			}else if (asciiOriginal === 32  || (asciiOriginal>=33 || asciiOriginal<=64) || (asciiOriginal>=91 || asciiOriginal<=96) || (asciiOriginal>=123 || asciiOriginal<=126 )) {
+			}else if (asciiOriginal === 32  || asciiOriginal === 95 || (asciiOriginal>=33 || asciiOriginal<=64)){
 
 				//Si detecta que se cumple la condición del ELSE IF no le hace nada al código, solo lo vuelve a transformar en letra
 				codedPhrase += String.fromCharCode(asciiOriginal);
@@ -42,14 +44,15 @@ window.cipher = {
 		}//Cierra FOR
 
 		//Aquí va a el return
-		return result.innerHTML = codedPhrase;
+		return codedPhrase;
 
 	},//Cierra FUNCIÓN encode
 
 	//Inicia función para decodificar
 	decode : (offset,string) =>{
 
-
+		//String vacio donde se guardara el texto decodificado
+		let decodedPhrase = "";	
 		//Me aseguro de convertir el dato obtenido en OFFSET en número y la guardo en una variable
 		const key = parseInt(offset);
 
@@ -78,18 +81,18 @@ window.cipher = {
 			//Condicional que detecta si el caracter procesado es un ESPACIO EN BLANCO (ASCII 32), o algún carácter especial			
 			}else if(asciiOriginal === 32 || (asciiOriginal>=33 || asciiOriginal<=64) || (asciiOriginal>=91 || asciiOriginal<=96) || (asciiOriginal>=123 || asciiOriginal<=126)){
 
-				//Asigna el nuevo valor como igual a su valor anterior
-				let newAscii = asciiOriginal;
 				//Agrega el espacio en blanco o caracter especial al texto volviendo a convertir el código ASCII a letra		
-				decodedPhrase += String.fromCharCode(newAscii);
+				decodedPhrase += String.fromCharCode(asciiOriginal);
 
 			}//Cierra último ELSE IF
 		
 		}//Cierra FOR
 
 		//Aquí va el return
-		return result.innerHTML = decodedPhrase;
+		return decodedPhrase;
 
-	}//Cierra FUNCIÓN decode
+	},//Cierra FUNCIÓN decode
 
+
+	createCipherWithOffset: () =>{}
 };

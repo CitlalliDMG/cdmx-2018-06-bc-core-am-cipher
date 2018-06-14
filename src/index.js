@@ -1,9 +1,3 @@
-//String vacio donde se guardara el texto codificado
-let codedPhrase = "";	
-
-//String vacio donde se guardara el texto decodificado
-let decodedPhrase = "";	
-
 //Sirve para después mandar llamar el texto que ingresa el usuario
 let getString = document.getElementById("originalPhrase");
 
@@ -41,7 +35,7 @@ const getDataEncode = () =>{
 		   buttons.style.display = "none";
 	       answer.style.display = "block";
 		   messageResult.innerHTML = `Este es tu texto codificado:`;
-		   cipher.encode(offset,string);
+		   result.innerHTML = cipher.encode(offset,string);
 		   offsetResult.innerHTML = `No olvides avisar que la clave para decodificar tu mensaje es: <br><br><strong>${offset}</strong>`;
 		   }
 
@@ -74,5 +68,5 @@ const getDataDecode = () =>{
 
 	    };
 
-		cipher.decode(offset,string);
+		result.innerHTML = cipher.decode(offset,string);
 };
