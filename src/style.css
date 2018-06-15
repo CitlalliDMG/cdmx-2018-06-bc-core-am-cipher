@@ -41,6 +41,7 @@ input, #result {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
+	margin-bottom: 4em;
 }
 
 #stringContainer,
