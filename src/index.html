@@ -12,35 +12,43 @@
 
     <header>
 
-      <h1>Shhh... <br> Es una sorpresa ;D</h1>
-      <p>Codifica y decodifica tus mensajes aquí para que YA SABES QUIÉN no se entere de los planes para su cumpleaños.</p>
-      <hr>
+      <h1>SHHH... Es una sorpresa ;D</h1>
+      <p id="headP">Sigue el 1, 2, 3, para codificar / decodificar tus mensajes <br>y evitar que <u>ya sabes quién</u> se entere de los planes.</p>
 
     </header>
 
     <!--Termina header-->
 
-    <section id=content>
+    <section id="content">
 
       <div id="stringContainer">
 
-        <h3>¿Cuál es tu mensaje?</h3>
+        <img id="number" src="number-01.png" alt="icon step number one">
+        <h3 id="questionLine">¿Cuál es tu mensaje?</h3>
+        <p>Escribe aquí el mensaje que quieres codificar o decodificar</p>
         <input type="text" id="originalPhrase" placeholder="Ingresa tu mensaje aquí" autofocus="">
 
       </div>
 
       <div id="offsetContainer">
         
-        <h3>¿Cuál es la clave secreta?</h3>
+        <img id="number" src="number-02.png" alt="icon step number two">
+        <h3 id="questionLine">¿Cuál es la clave secreta?</h3>
+        <ul id= "list">
+          <li>Si estas codificando un mensaje ingresa el número que quieres que sea la clave.</li>
+          <br>
+          <li>Si estas decodificando, ingresa la clave que te dieron.</li>
+        </ul>
         <input type="text" id="key" placeholder="Ingresa tu clave">
 
       </div>
 
       <div id="buttons">
 
-        <h3>¿Que quieres hacer con el mensaje?</h3>
-        <button type="button" id="codeButton" class="question" onclick="getDataEncode()">Codificarlo</button>
-        <button type="button" id="decodeButton" class="question" onclick="getDataDecode()">Decodificarlo</button>
+        <img id="number" src="number-03.png" alt="icon step number three">
+        <h3 id="questionLine">¿Que quieres hacer con el mensaje?</h3>
+        <button type="button" id="codeButton" class="question" onclick="getDataEncode()">CODIFICARLO</button>
+        <button type="button" id="decodeButton" class="question" onclick="getDataDecode()">DECODIFICARLO</button>
 
       </div>
 
@@ -49,11 +57,15 @@
         <h3 id="messageResult"></h3>
         <p id="result"></p>
         <p id="offsetResult"></p>
-        <button type="submit" id="restartButton" class="question" onclick="window.location.reload()">Regresa al inicio</button>
+        <button type="submit" id="restartButton" class="question" onclick="window.location.reload()">REGRESA AL INICIO</button>
 
       </div>
   
     </section>
+
+    <footer>
+      <p>Proyecto 1: Cipher @ LABORATORIA Junio 2018 | Citlalli Del Moral </p>
+    </footer>
 
     <div id="root"></div>
     <script src="cipher.js"></script>
