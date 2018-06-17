@@ -1,3 +1,5 @@
+/*Estilos de ELEMENTOS y SECCIONES*/
+
 body{
 	font-family: 'Montserrat', sans-serif;
 	box-sizing: border-box;
@@ -9,22 +11,19 @@ body{
 	background-color: #090f2c;
 }
 
+h1{
+	margin-bottom: 0;
+}
+
+h3{
+	color: #090f2c;
+} 
+
 header{
 	padding: 1em 0em;
 	width: 100%;
 	text-align: center;
 	margin: 0 auto;
-}
-
-h1{
-	margin-bottom: 0;
-}
-h3{
-	color: #090f2c;
-}
-
-hr{
-	width: 70%;
 }
 
 input, #result {
@@ -48,6 +47,16 @@ footer{
 	color:#fff;
 }
 
+/*Estilos para ID's*/
+
+#content{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom: 4em;
+}
+
 #headerA{
 	font-size: 1.8em;
 	font-weight: bold;
@@ -59,12 +68,12 @@ footer{
 	font-size: 1.3em;
 }
 
-#content{
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin-bottom: 4em;
+#list{
+	text-align: left;
+}
+
+#list li {
+	margin-bottom: 1em;
 }
 
 #stringContainer,
@@ -82,16 +91,15 @@ footer{
     background-color: #fbeec0;
 }
 
-#list{
-	text-align: left;
-}
-#number{
-	width: 30%;
+#result{
+	background-color: #fff;
 }
 
 #answer{
 	display: none;
 }
+
+/*Estilos para CLASES*/
 
 .question{
 	width: 80%;
@@ -110,11 +118,13 @@ footer{
 	color: #a85562;
 }
 
+.number{
+	width: 30%;
+}
+
 .numberP{
 	width: 1.3em;
 	vertical-align: text-bottom;
 }
 
-#result{
-	background-color: #fff;
-}
+

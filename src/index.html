@@ -13,10 +13,10 @@
 
     <header>
       <div id="headerA">
-      <h1>SHHH... <span style="color: #5e8896">Es una sorpresa</span> &#x1F609</h1>
+      <h1>SHHH... <span style="color: #5e8896">Es una sorpresa</span> &#x1F609;</h1>
       </div>
       <div id="headerB">
-      <p id="headP">Sigue el <img class="numberP" src="number-01.png" alt="icon step number one"> &#x25B6 <img class="numberP" src="number-02.png" alt="icon step number two"> &#x25B6 <img class="numberP" src="number-03.png" alt="icon step number three"> para codificar / decodificar tus mensajes y evitar que ya sabes quién se entere de los planes.</p>
+      <p id="headP">Sigue el <img class="numberP" src="number-01.png" alt="icon step number one"> &#x25B6; <img class="numberP" src="number-02.png" alt="icon step number two"> &#x25B6; <img class="numberP" src="number-03.png" alt="icon step number three"> para codificar / decodificar tus mensajes y evitar que ya sabes quién se entere de los planes.</p>
       </div>
     </header>
 
@@ -26,8 +26,8 @@
 
       <div id="stringContainer">
 
-        <img id="number" src="number-01.png" alt="icon step number one">
-        <h3 id="questionLine">¿Cuál es tu mensaje?</h3>
+        <img class="number" src="number-01.png" alt="icon step number one">
+        <h3 class="questionLine">¿Cuál es tu mensaje?</h3>
         <p>Escribe aquí el mensaje que quieres codificar o decodificar</p>
         <input type="text" id="originalPhrase" placeholder="Ingresa tu mensaje aquí" autofocus="">
 
@@ -35,11 +35,10 @@
 
       <div id="offsetContainer">
         
-        <img id="number" src="number-02.png" alt="icon step number two">
-        <h3 id="questionLine">¿Cuál es la clave secreta?</h3>
+        <img class="number" src="number-02.png" alt="icon step number two">
+        <h3 class="questionLine">¿Cuál es la clave secreta?</h3>
         <ul id= "list">
           <li>Si estas codificando un mensaje ingresa el número que quieres que sea la clave.</li>
-          <br>
           <li>Si estas decodificando, ingresa la clave que te dieron.</li>
         </ul>
         <input type="text" id="key" placeholder="Ingresa tu clave">
@@ -48,8 +47,8 @@
 
       <div id="buttons">
 
-        <img id="number" src="number-03.png" alt="icon step number three">
-        <h3 id="questionLine">¿Que quieres hacer con el mensaje?</h3>
+        <img class="number" src="number-03.png" alt="icon step number three">
+        <h3 class="questionLine">¿Que quieres hacer con el mensaje?</h3>
         <button type="button" id="codeButton" class="question" onclick="getDataEncode()">CODIFICARLO</button>
         <button type="button" id="decodeButton" class="question" onclick="getDataDecode()">DECODIFICARLO</button>
 
@@ -57,7 +56,7 @@
 
       <div id="answer">
       
-        <h3 id="messageResult"></h3>
+        <h3 id="messageResult">.</h3>
         <p id="result"></p>
         <p id="offsetResult"></p>
         <button type="submit" id="restartButton" class="question" onclick="window.location.reload()">REGRESA AL INICIO</button>
