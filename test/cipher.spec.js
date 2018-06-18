@@ -18,8 +18,8 @@ describe('cipher', () => {
       assert.equal(cipher.encode(33,'abcdefghijklmnopqrstuvwxyz'), 'hijklmnopqrstuvwxyzabcdefg');
     });
 
-    it('debería retornar "?# !]" para "?# !]" con offest 33', () => {
-      assert.equal(cipher.encode(33,'?# !]'), '?# !]');
+    it('debería retornar "¿? #!" para "¿? #!" con offest 33', () => {
+      assert.equal(cipher.encode(33,'¿? #!'), '¿? #!');
     });
 
   });
@@ -38,8 +38,8 @@ describe('cipher', () => {
       assert.equal(cipher.decode(33,'hijklmnopqrstuvwxyzabcdefg'), 'abcdefghijklmnopqrstuvwxyz');
     });
 
-    it('debería retornar "¿? #!" para "¿? #" con offest 33', () => {
-      assert.equal(cipher.decode(33,'¿? #'), '¿? #');
+    it('debería retornar "¿? #!" para "¿? #!" con offest 33', () => {
+      assert.equal(cipher.decode(33,'¿? #!'), '¿? #!');
     });
 
   });
